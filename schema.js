@@ -10,4 +10,4 @@ const registerschema = new mongooes.Schema(
 
 const registerStudent = mongooes.model("RegisterStud",registerschema)
 
-module.exports = registerStudent()
+module.exports = registerStudent

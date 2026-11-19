@@ -9,33 +9,15 @@ app.use(express.json())
 
 connectdb()
 
-let data = [
-    {
-        "Name":"Ajith varma K",
-        "Age":21,
-        "Course":"MERN Stack",
-        "is Completed":false
-    },
-        {
-        "Name":"Yaswanth",
-        "Age":22,
-        "Course":"MERN Stack",
-        "is Completed":false
-    },
-        {
-        "Name":"Hari",
-        "Age":25,
-        "Course":"developer",
-        "is Completed":true
+app.post("/register",async(req,res)=>{
+    try{
+        const user = req.body
+        const reg = new registerStudent(user)
+        const result = await reg.save()
+        res.send("data send")
+    }catch(err){
+        res.send(err)
     }
-]
-
-app.get("/student",(req,res)=>{
-    res.send(data)
-})
-
-app.post("/get-student",(req,res)=>{
-    console.log(req.body);
 })
 
 app.listen(3000,()=>{
