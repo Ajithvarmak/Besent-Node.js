@@ -1,5 +1,6 @@
 const express = require("express")
 const connectdb = require("./config_db")
+const registerStudent = require("./schema")
 
 
 const app = express()
