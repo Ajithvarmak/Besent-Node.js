@@ -1,8 +1,12 @@
 const express = require("express")
+const connectdb = require("./config_db")
+
 
 const app = express()
 
 app.use(express.json())
+
+connectdb()
 
 let data = [
     {
