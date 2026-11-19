@@ -2,6 +2,8 @@ const express = require("express")
 
 const app = express()
 
+app.use(express.json())
+
 let data = [
     {
         "Name":"Ajith varma K",
@@ -24,11 +26,16 @@ let data = [
 ]
 
 app.get("/student",(req,res)=>{
-
     res.send(data)
+})
 
+app.post("/get-student",(req,res)=>{
+    console.log(req.body);
 })
 
 app.listen(3000,()=>{
     console.log("port 3000 is running")
 })
+
+
+// query & params 
